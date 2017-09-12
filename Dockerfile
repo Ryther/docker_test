@@ -163,7 +163,7 @@ RUN echo 'Installing Key Promoter X Plugin' && \
 RUN sudo chown developer:developer -R /home/developer
 
 # Creazione dei mounting point
-VOLUME [ "/home/developer/projects" ]
+VOLUME [ "/home/developer" ]
 VOLUME [ "/home/developer/.IdeaIC${INTELLIJ_VER}" ]
 VOLUME [ "/tmp/.X11-unix" ]
 
