@@ -6,3 +6,4 @@
 		starter.bat
 	MKDIR ..\output
 	COPY /b 7zSD.sfx + config.txt + files.7z ..\output\intellij-idea.exe
+	del files.7z
