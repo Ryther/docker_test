@@ -163,12 +163,12 @@ RUN echo 'Installing Key Promoter X Plugin' && \
 RUN sudo chown developer:developer -R /home/developer
 
 # Creazione dei mounting point
-VOLUME [ "/home/developer/projects" ]
 VOLUME [ "/home/developer/.IdeaIC${INTELLIJ_VER}" ]
+VOLUME [ "/home/developer" ]
 VOLUME [ "/tmp/.X11-unix" ]
 
 # Operazioni finali
 USER developer
 ENV HOME /home/developer
-WORKDIR /home/developer/projects
+WORKDIR /home/developer
 ENTRYPOINT [ "/opt/intellij/bin/idea.sh" ]
