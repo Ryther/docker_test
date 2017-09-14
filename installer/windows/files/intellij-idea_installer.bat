@@ -15,7 +15,26 @@
 		CALL :GET_NOW_LOG "VcXsrv - gia' avviato"
 	) ELSE (
 		CALL :GET_NOW_LOG "VcXsrv - avvio in corso"
-		START "VcXsrv" "%PROGRAMFILES%\VcXsrv\vcxsrv.exe" :0 -ac -terminate -lesspointer -multiwindow -clipboard -wgl
+		START "VcXsrv" "%PRG_PATH%\VcXsrv\vcxsrv.exe" :0 -ac -terminate -lesspointer -multiwindow -clipboard -wgl
+	)
+	
+	CALL :GET_NOW_LOG "Docker - Verifica installazione"
+	CHOCO list -l -r vcxsrv > %TEMP%\tmp_docker_check.txt
+	SET docker=
+	SET /p docker=<%TEMP%\tmp_docker_check.txt
+	IF "%docker%" == "" (
+		CALL :GET_NOW_LOG "Docker - Installazione"
+		CHOCO install -y docker-for-windows
+	)	ELSE (
+		CALL :GET_NOW_LOG "Docker - gia' presente"
+	)
+	CALL :GET_NOW_LOG "Docker - in esecuzione?"
+	 TASKLIST /FI "IMAGENAME eq Docker*" 2>NUL | FIND /I /N "Docker">NUL
+	IF "%ERRORLEVEL%"=="0" (
+		CALL :GET_NOW_LOG "Docker - gia' avviato"
+	) ELSE (
+		CALL :GET_NOW_LOG "Docker - avvio in corso"
+		START "VcXsrv" "%PRG_PATH%\VcXsrv\vcxsrv.exe" :0 -ac -terminate -lesspointer -multiwindow -clipboard -wgl
 	)
 	
 	CALL :GET_NOW_LOG "%DOCKER_APP% - Verifica esistenza immagine"

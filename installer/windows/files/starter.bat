@@ -5,6 +5,14 @@
 	SET PRV_DOCKER_HUB=%1
 	SET DOCKER_APP=%2
 	SET DOCKER_APP_VER=%3
+	SET PRG_PATH=
+	REG Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > NUL && set OS_ARCH=32BIT || set OS_ARCH=64BIT
+	
+	IF "%OS_ARCH%"=="32BIT" (
+		SET PRG_PATH=%PROGRAMFILES%
+	) ELSE (
+		SET PRG_PATH=%PROGRAMW6432%
+	)
 
 	:: MAIN
 	CALL :GET_NOW_LOG "CHOCO - Verifica installazione"
