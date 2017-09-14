@@ -1,0 +1,6 @@
+﻿;!@Install@!UTF-8!
+Title="Intellij Idea Docker Runner"
+InstallPath="%TEMP%\\docker_intellij-idea\\"
+GUIMode="2"
+RunProgram="starter.bat ryther intellij-idea 2017.2 intellij-idea_installer"
+;!@InstallEnd@!
