@@ -1,4 +1,7 @@
 ﻿@ECHO OFF
+	IF EXIST output (
+		RMDIR /S /Q output
+	)
 	CD files
 	7Z a files ^
 		batch_utils.cmd ^
@@ -6,4 +9,4 @@
 		starter.bat
 	MKDIR ..\output
 	COPY /b 7zSD.sfx + config.txt + files.7z ..\output\intellij-idea.exe
-	del files.7z
+	DEL files.7z
