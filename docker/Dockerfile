@@ -6,7 +6,7 @@ LABEL maintainer="edoardo.zanoni@gambabruno.it"
 # Variabili della build
 ENV	LANG=C.UTF-8 \
 	INTELLIJ_VER=2017.2 \
-	INTELLIJ_MINVER=4
+	INTELLIJ_MINVER=5
 
 # Aggiornamento ed installazione delle applicazioni di base
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
@@ -56,23 +56,24 @@ RUN echo 'Downloading IntelliJ IDEA' && \
     wget http://download-cf.jetbrains.com/idea/ideaIC-${INTELLIJ_VER}.${INTELLIJ_MINVER}.tar.gz -O /tmp/intellij.tar.gz -q && \
     echo 'Installing IntelliJ IDEA' && \
     mkdir -p /opt/intellij && \
+	sudo chown developer:developer -R /opt/intellij
     tar -xf /tmp/intellij.tar.gz --strip-components=1 -C /opt/intellij && \
     rm /tmp/intellij.tar.gz
 
-ENV	VSTS_VER=37483 \
-	MARKD_SUP_VER=36713 \
-	GAUGE_VER=37238 \
+ENV	VSTS_VER=38535 \
+	MARKD_SUP_VER=39197 \
+	GAUGE_VER=39072 \
 	BASHS_VER=38357 \
 	BATCH_VER=22567 \
 	CMDSUPP_VER=18875 \
-	CHECKSTYLE_VER=38351 \
-	DBNAV_VER=36094 \
+	CHECKSTYLE_VER=39061 \
+	DBNAV_VER=38969 \
 	DCKER_VER=38244 \
-	MATERIAL_VER=38145 \
+	MATERIAL_VER=39251 \
 	CODEGLANCE_VER=33731 \
 	YAML_VER=35585 \
 	SONARLINT_VER=36564 \
-	KEYPROMX_VER=37777
+	KEYPROMX_VER=38839
 
 # Installazione plugins
 RUN echo 'Installing Visual Studio Team Serivces Plugin' && \
