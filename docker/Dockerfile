@@ -6,7 +6,7 @@ LABEL maintainer="edoardo.zanoni@gambabruno.it"
 # Variabili della build
 ENV	LANG=C.UTF-8 \
 	INTELLIJ_VER=2017.2 \
-	INTELLIJ_MINVER=4
+	INTELLIJ_MINVER=5
 
 # Aggiornamento ed installazione delle applicazioni di base
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
