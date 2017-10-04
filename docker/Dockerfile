@@ -6,7 +6,7 @@ LABEL maintainer="edoardo.zanoni@gambabruno.it"
 # Variabili della build
 ENV	LANG=C.UTF-8 \
 	INTELLIJ_VER=2017.2 \
-	INTELLIJ_MINVER=5
+	INTELLIJ_MINVER=4
 
 # Aggiornamento ed installazione delle applicazioni di base
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
@@ -56,7 +56,7 @@ RUN echo 'Downloading IntelliJ IDEA' && \
     wget http://download-cf.jetbrains.com/idea/ideaIC-${INTELLIJ_VER}.${INTELLIJ_MINVER}.tar.gz -O /tmp/intellij.tar.gz -q && \
     echo 'Installing IntelliJ IDEA' && \
     mkdir -p /opt/intellij && \
-	sudo chown developer:developer -R /opt/intellij
+	sudo chown developer:developer -R /opt/intellij && \
     tar -xf /tmp/intellij.tar.gz --strip-components=1 -C /opt/intellij && \
     rm /tmp/intellij.tar.gz
 

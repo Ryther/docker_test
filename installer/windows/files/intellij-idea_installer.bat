@@ -30,7 +30,7 @@
 		CALL :GET_NOW_LOG "Docker - gia' presente"
 	)
 	CALL :GET_NOW_LOG "Docker - in esecuzione?"
-	 TASKLIST /FI "IMAGENAME eq Docker*" 2>NUL | FIND /I /N "Docker">NUL
+	TASKLIST /FI "IMAGENAME eq Docker*" 2>NUL | FIND /I /N "Docker">NUL
 	IF "%ERRORLEVEL%"=="0" (
 		CALL :GET_NOW_LOG "Docker - gia' avviato"
 	) ELSE (
