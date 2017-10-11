@@ -6,7 +6,10 @@ LABEL maintainer="edoardo.zanoni@gambabruno.it"
 # Variabili della build
 ENV	LANG=C.UTF-8 \
 	INTELLIJ_VER=2017.2 \
-	INTELLIJ_MINVER=5
+	INTELLIJ_MINVER=5 \
+	OLD_JDK1_VER=131_20 \
+	OLD_JDK2_VER=142_18 \
+	OLD_JDK3_VER=6_45
 
 # Aggiornamento ed installazione delle applicazioni di base
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
@@ -21,6 +24,7 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
 		libgtk2.0-0 \
 		libcanberra-gtk-module \
 		libsecret-1-0 \
+		lib32z1 \
 		git \
 		gnome-keyring \
 		unzip \
@@ -51,6 +55,29 @@ RUN mkdir -p /home/developer/.IdeaIC${INTELLIJ_VER}/config/options && \
 # Impostazione dell'owner della cartella (developer)
 RUN chown developer:developer -R /home/developer/.IdeaIC${INTELLIJ_VER}
 
+# Installazione versioni obsolete di Java
+
+COPY jdk/jdk*.bin /usr/lib/jvm/
+# Attivazione JDK 3
+RUN sudo update-alternatives --install "/usr/bin/java" "java" \
+	"/usr/lib/jvm/jdk1.3.1_20/bin/java" 1 && \
+	sudo update-alternatives --install "/usr/bin/javac" "javac" \
+	"/usr/lib/jvm/jdk1.3.1_20/bin/javac" 1 && \
+	sudo update-alternatives --install "/usr/bin/javaws" "javaws" \
+	"/usr/lib/jvm/jdk1.3.1_20/bin/javaws" 1 && \
+# Attivazione JDK 4	
+	sudo update-alternatives --install "/usr/bin/java" "java" \
+	"/usr/lib/jvm/j2sdk1.4.2_18/bin/java" 1 && \
+	sudo update-alternatives --install "/usr/bin/javac" "javac" \
+	"/usr/lib/jvm/j2sdk1.4.2_18/bin/javac" 1 && \
+# Attivazione JDK 6
+	sudo update-alternatives --install "/usr/bin/java" "java" \
+	"/usr/lib/jvm/jdk1.6.0_45/bin/java" 1 && \
+	sudo update-alternatives --install "/usr/bin/javac" "javac" \
+	"/usr/lib/jvm/jdk1.6.0_45/bin/javac" 1 && \
+	sudo update-alternatives --install "/usr/bin/javaws" "javaws" \
+	"/usr/lib/jvm/jdk1.6.0_45/bin/javaws" 1
+
 # Download ed installazione di IntelliJ IDEA
 RUN echo 'Downloading IntelliJ IDEA' && \
     wget http://download-cf.jetbrains.com/idea/ideaIC-${INTELLIJ_VER}.${INTELLIJ_MINVER}.tar.gz -O /tmp/intellij.tar.gz -q && \
@@ -69,7 +96,7 @@ ENV	VSTS_VER=38535 \
 	CHECKSTYLE_VER=39061 \
 	DBNAV_VER=38969 \
 	DCKER_VER=38244 \
-	MATERIAL_VER=39251 \
+	MATERIAL_VER=38670 \
 	CODEGLANCE_VER=33731 \
 	YAML_VER=35585 \
 	SONARLINT_VER=36564 \
