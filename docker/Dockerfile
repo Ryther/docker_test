@@ -7,9 +7,9 @@ LABEL maintainer="edoardo.zanoni@gambabruno.it"
 ENV	LANG=C.UTF-8 \
 	INTELLIJ_VER=2017.2 \
 	INTELLIJ_MINVER=5 \
-	OLD_JDK1_VER=131_20 \
-	OLD_JDK2_VER=142_18 \
-	OLD_JDK3_VER=6_45
+	OLD_JDK1_VER=1.3.1_20 \
+	OLD_JDK2_VER=1.4.2_18 \
+	OLD_JDK3_VER=1.6.0_45
 
 # Aggiornamento ed installazione delle applicazioni di base
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
@@ -57,26 +57,35 @@ RUN chown developer:developer -R /home/developer/.IdeaIC${INTELLIJ_VER}
 
 # Installazione versioni obsolete di Java
 
-COPY jdk/jdk*.bin /usr/lib/jvm/
+RUN cd /usr/lib/jvm/ && \
+	sudo wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK1_VER}.tar -O jdk${OLD_JDK1_VER}.tar -q
+	sudo wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/j2sdk${OLD_JDK2_VER}.tar -O j2sdk${OLD_JDK2_VER}.tar -q
+	sudo wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK3_VER}.tar -O jdk${OLD_JDK3_VER}.tar -q
+	tar -xzvf jdk${OLD_JDK1_VER}.tar jdk${OLD_JDK1_VER}/ && \
+	rm jdk${OLD_JDK1_VER}.tar && \
+	tar -xzvf j2sdk${OLD_JDK2_VER}.tar j2sdk${OLD_JDK2_VER}/ && \
+	rm j2sdk${OLD_JDK2_VER}.tar && \
+	tar -xzvf jdk${OLD_JDK3_VER}.tar jdk${OLD_JDK3_VER}/ && \
+	rm jdk${OLD_JDK3_VER}.tar && \
 # Attivazione JDK 3
-RUN sudo update-alternatives --install "/usr/bin/java" "java" \
-	"/usr/lib/jvm/jdk1.3.1_20/bin/java" 1 && \
+	sudo update-alternatives --install "/usr/bin/java" "java" \
+	"/usr/lib/jvm/jdk${OLD_JDK1_VER}/bin/java" 1 && \
 	sudo update-alternatives --install "/usr/bin/javac" "javac" \
-	"/usr/lib/jvm/jdk1.3.1_20/bin/javac" 1 && \
+	"/usr/lib/jvm/jdk${OLD_JDK1_VER}/bin/javac" 1 && \
 	sudo update-alternatives --install "/usr/bin/javaws" "javaws" \
-	"/usr/lib/jvm/jdk1.3.1_20/bin/javaws" 1 && \
+	"/usr/lib/jvm/jdk${OLD_JDK1_VER}/bin/javaws" 1 && \
 # Attivazione JDK 4	
 	sudo update-alternatives --install "/usr/bin/java" "java" \
-	"/usr/lib/jvm/j2sdk1.4.2_18/bin/java" 1 && \
+	"/usr/lib/jvm/j2sdk${OLD_JDK2_VER}/bin/java" 1 && \
 	sudo update-alternatives --install "/usr/bin/javac" "javac" \
-	"/usr/lib/jvm/j2sdk1.4.2_18/bin/javac" 1 && \
+	"/usr/lib/jvm/j2sdk${OLD_JDK2_VER}/bin/javac" 1 && \
 # Attivazione JDK 6
 	sudo update-alternatives --install "/usr/bin/java" "java" \
-	"/usr/lib/jvm/jdk1.6.0_45/bin/java" 1 && \
+	"/usr/lib/jvm/jdk${OLD_JDK3_VER}/bin/java" 1 && \
 	sudo update-alternatives --install "/usr/bin/javac" "javac" \
-	"/usr/lib/jvm/jdk1.6.0_45/bin/javac" 1 && \
+	"/usr/lib/jvm/jdk${OLD_JDK3_VER}/bin/javac" 1 && \
 	sudo update-alternatives --install "/usr/bin/javaws" "javaws" \
-	"/usr/lib/jvm/jdk1.6.0_45/bin/javaws" 1
+	"/usr/lib/jvm/jdk${OLD_JDK3_VER}/bin/javaws" 1
 
 # Download ed installazione di IntelliJ IDEA
 RUN echo 'Downloading IntelliJ IDEA' && \
