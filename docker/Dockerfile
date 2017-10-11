@@ -58,15 +58,13 @@ RUN chown developer:developer -R /home/developer/.IdeaIC${INTELLIJ_VER}
 # Installazione versioni obsolete di Java
 
 RUN cd /usr/lib/jvm/ && \
-	sudo wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK1_VER}.tar -O jdk${OLD_JDK1_VER}.tar -q
-	sudo wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/j2sdk${OLD_JDK2_VER}.tar -O j2sdk${OLD_JDK2_VER}.tar -q
-	sudo wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK3_VER}.tar -O jdk${OLD_JDK3_VER}.tar -q
-	tar -xzvf jdk${OLD_JDK1_VER}.tar jdk${OLD_JDK1_VER}/ && \
-	rm jdk${OLD_JDK1_VER}.tar && \
+	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK1_VER}.tar -O /tmp/jdk${OLD_JDK1_VER}.tar -q
+	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/j2sdk${OLD_JDK2_VER}.tar -O /tmp/j2sdk${OLD_JDK2_VER}.tar -q
+	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK3_VER}.tar -O /tmp/jdk${OLD_JDK3_VER}.tar -q
+	tar -xzvf /tmp/jdk${OLD_JDK1_VER}.tar jdk${OLD_JDK1_VER}/ && \
 	tar -xzvf j2sdk${OLD_JDK2_VER}.tar j2sdk${OLD_JDK2_VER}/ && \
-	rm j2sdk${OLD_JDK2_VER}.tar && \
 	tar -xzvf jdk${OLD_JDK3_VER}.tar jdk${OLD_JDK3_VER}/ && \
-	rm jdk${OLD_JDK3_VER}.tar && \
+	rm -rf /tmp/* && \
 # Attivazione JDK 3
 	sudo update-alternatives --install "/usr/bin/java" "java" \
 	"/usr/lib/jvm/jdk${OLD_JDK1_VER}/bin/java" 1 && \
