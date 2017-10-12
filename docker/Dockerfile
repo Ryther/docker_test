@@ -64,6 +64,8 @@ RUN wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_
 	tar -xzvf /tmp/j2sdk${OLD_JDK2_VER}.tar -C /usr/lib/jvm/ && \
 	tar -xzvf /tmp/jdk${OLD_JDK3_VER}.tar -C /usr/lib/jvm/ && \
 	ls -l && \
+	cd jdk1.3.1_20 && \
+	ls -l && \
 	rm -rf /tmp/* && \
 # Attivazione JDK 3
 	sudo update-alternatives --install "/usr/bin/java" "java" \
