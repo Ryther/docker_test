@@ -61,8 +61,8 @@ RUN cd /usr/lib/jvm/ && \
 	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/j2sdk${OLD_JDK2_VER}.tar -O /tmp/j2sdk${OLD_JDK2_VER}.tar -q && \
 	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK3_VER}.tar -O /tmp/jdk${OLD_JDK3_VER}.tar -q && \
 	tar -xzvf /tmp/jdk${OLD_JDK1_VER}.tar jdk${OLD_JDK1_VER}/ && \
-	tar -xzvf j2sdk${OLD_JDK2_VER}.tar j2sdk${OLD_JDK2_VER}/ && \
-	tar -xzvf jdk${OLD_JDK3_VER}.tar jdk${OLD_JDK3_VER}/ && \
+	tar -xzvf /tmp/j2sdk${OLD_JDK2_VER}.tar j2sdk${OLD_JDK2_VER}/ && \
+	tar -xzvf /tmp/jdk${OLD_JDK3_VER}.tar jdk${OLD_JDK3_VER}/ && \
 	rm -rf /tmp/* && \
 # Attivazione JDK 3
 	sudo update-alternatives --install "/usr/bin/java" "java" \
