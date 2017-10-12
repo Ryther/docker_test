@@ -20,7 +20,7 @@ Una volta creato il container, per eseguirlo nuovamente utilizzare il comando:
 Tabella dei plugin inclusi nell'immagine:
 
 |DOCKERFILE NAME|VERSION|VERSION ID|NAME|DL LINK|
-|:------------------|:-----------:|:--------------:|:-------|:------:|
+|:------------------|------------:|:--------------:|:-------|:------:|
 |VSTS_VER		|	1.123.0		|	38535	|	Visual Studio Team Services	|	https://plugins.jetbrains.com/plugin/download?updateId=38535|
 |MARKD_SUP_VER	|	173.2696.26	|	39197	|	Markdown support			|	https://plugins.jetbrains.com/plugin/download?updateId=39197|
 |GAUGE_VER 		|	0.3.7		|	39072	|	Gauge						|	https://plugins.jetbrains.com/plugin/download?updateId=39072|
@@ -39,5 +39,5 @@ Tabella dei plugin inclusi nell'immagine:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk2NTgyNzUwXX0=
+eyJoaXN0b3J5IjpbLTg4NjQ1NDUxMV19
 -->
