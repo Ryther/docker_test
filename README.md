@@ -9,9 +9,15 @@ Per creare il container utilizzare il seguente comando:
 |:-:|:--------------|
 |Windows|`docker run -tdi --name=intellij-idea --net="host" --privileged=true -e DISPLAY=%COMPUTERNAME%:0.0 -v intellij-idea_workdir:/home/developer -v intellij_idea_data:/home/developer/.IdeaIC2017.2 ryther/intellij-idea:latest`
 |Linux|`sudo docker run -tdi --name=intellij-idea --net="host" --privileged=true -e DISPLAY=$DISPLAY -v intellij-idea_workdir:/home/developer -v /tmp/.X11-unix:/tmp/.X11-unix -v intellij-idea_config:/home/developer/.IdeaIC2017.2 ryther/intellij-idea:latest`
+
 ---------------------------------
+
 Una volta creato il container, per eseguirlo nuovamente utilizzare il comando:  
 `docker start intellij-idea`
+
+----------------------
+
+Tabella dei plugin inclusi nell'immagine:
 
 |DOCKERFILE NAME|VERSION|VERSION ID|NAME|DL LINK|
 |:------------------|:-----------:|:--------------:|:-------|:------:|
@@ -33,5 +39,5 @@ Una volta creato il container, per eseguirlo nuovamente utilizzare il comando:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4OTMyOTk0NF19
+eyJoaXN0b3J5IjpbLTIwNDcyNzM1MzZdfQ==
 -->
