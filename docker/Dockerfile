@@ -59,21 +59,15 @@ RUN chown developer:developer -R /home/developer/.IdeaIC${INTELLIJ_VER}
 RUN wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK1_VER}.tar -O /tmp/jdk${OLD_JDK1_VER}.tar -q && \
 	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/j2sdk${OLD_JDK2_VER}.tar -O /tmp/j2sdk${OLD_JDK2_VER}.tar -q && \
 	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK3_VER}.tar -O /tmp/jdk${OLD_JDK3_VER}.tar -q && \
-	cd /usr/lib/jvm && \
 	tar -xzvf /tmp/jdk${OLD_JDK1_VER}.tar -C /usr/lib/jvm/ && \
 	tar -xzvf /tmp/j2sdk${OLD_JDK2_VER}.tar -C /usr/lib/jvm/ && \
 	tar -xzvf /tmp/jdk${OLD_JDK3_VER}.tar -C /usr/lib/jvm/ && \
-	ls -l && \
-	cd jdk1.3.1_20 && \
-	ls -l && \
 	rm -rf /tmp/* && \
 # Attivazione JDK 3
 	sudo update-alternatives --install "/usr/bin/java" "java" \
 	"/usr/lib/jvm/jdk${OLD_JDK1_VER}/bin/java" 1 && \
 	sudo update-alternatives --install "/usr/bin/javac" "javac" \
 	"/usr/lib/jvm/jdk${OLD_JDK1_VER}/bin/javac" 1 && \
-	sudo update-alternatives --install "/usr/bin/javaws" "javaws" \
-	"/usr/lib/jvm/jdk${OLD_JDK1_VER}/bin/javaws" 1 && \
 # Attivazione JDK 4	
 	sudo update-alternatives --install "/usr/bin/java" "java" \
 	"/usr/lib/jvm/j2sdk${OLD_JDK2_VER}/bin/java" 1 && \
