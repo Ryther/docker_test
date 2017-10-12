@@ -59,6 +59,8 @@ RUN chown developer:developer -R /home/developer/.IdeaIC${INTELLIJ_VER}
 RUN wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK1_VER}.tar -O /tmp/jdk${OLD_JDK1_VER}.tar -q && \
 	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/j2sdk${OLD_JDK2_VER}.tar -O /tmp/j2sdk${OLD_JDK2_VER}.tar -q && \
 	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK3_VER}.tar -O /tmp/jdk${OLD_JDK3_VER}.tar -q && \
+	cd /usr/lib/jvm && \
+	ls -l && \
 	tar -xzvf /tmp/jdk${OLD_JDK1_VER}.tar -C /usr/lib/jvm/ && \
 	tar -xzvf /tmp/j2sdk${OLD_JDK2_VER}.tar -C /usr/lib/jvm/ && \
 	tar -xzvf /tmp/jdk${OLD_JDK3_VER}.tar -C /usr/lib/jvm/ && \
