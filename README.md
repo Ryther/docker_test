@@ -13,7 +13,7 @@ Per creare il container utilizzare il seguente comando:
 ---------------------------------
 
 Una volta creato il container, per eseguirlo nuovamente utilizzare il comando:  
-`docker start intellij-idea`
+>`docker start intellij-idea`
 
 ----------------------
 
@@ -39,5 +39,5 @@ Tabella dei plugin inclusi nell'immagine:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDcyNzM1MzZdfQ==
+eyJoaXN0b3J5IjpbMzk2NTgyNzUwXX0=
 -->
