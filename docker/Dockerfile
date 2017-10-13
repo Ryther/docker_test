@@ -103,7 +103,8 @@ ENV	VSTS_VER=38535 \
 	CODEGLANCE_VER=33731 \
 	YAML_VER=35585 \
 	SONARLINT_VER=36564 \
-	KEYPROMX_VER=38839
+	KEYPROMX_VER=38839 \
+	GITLAB_VER=39157
 
 # Installazione plugins
 RUN echo 'Installing Visual Studio Team Serivces Plugin' && \
@@ -189,6 +190,12 @@ RUN echo 'Installing Key Promoter X Plugin' && \
 	wget https://plugins.jetbrains.com/plugin/download?updateId=${KEYPROMX_VER} -O ${KEYPROMX_VER}.zip -q && \
 	unzip -q ${KEYPROMX_VER}.zip && \
 	rm ${KEYPROMX_VER}.zip
+	
+RUN echo 'Installing GitLab Projects Plugin' && \
+	cd /home/developer/.IdeaIC${INTELLIJ_VER}/config/plugins/ && \
+	wget https://plugins.jetbrains.com/plugin/download?updateId=${GITLAB_VER} -O ${GITLAB_VER}.zip -q && \
+	unzip -q ${GITLAB_VER}.zip && \
+	rm ${GITLAB_VER}.zip
 
 # Impostazione dell'owner della cartella (developer)
 RUN sudo chown developer:developer -R /home/developer
