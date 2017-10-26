@@ -1,4 +1,4 @@
 [submodule "powershell_utils"]
 	path = .\\installer\\windows\\files\\lib
-	url = ../../utils/powershell_modules.git
+	url = http://tools.gambabruno.it/utils/powershell_modules.git
 	branch = Utils
