@@ -1,0 +1,1 @@
+powershell -noprofile -executionpolicy Bypass -command "&{ start-process powershell -ArgumentList '-noprofile -file %TEMP%\docker_intellij-idea\launcher.ps1 %1 %2 %3' -verb RunAs }"

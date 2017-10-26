@@ -2,11 +2,9 @@
 	IF EXIST output (
 		RMDIR /S /Q output
 	)
+	MKDIR output
 	CD files
-	7Z a files ^
-		batch_utils.cmd ^
-		intellij-idea_installer.bat ^
-		starter.bat
-	MKDIR ..\output
-	COPY /b 7zSD.sfx + config.txt + files.7z ..\output\intellij-idea.exe
-	DEL files.7z
+	SET files=lib raiser.bat installer_intellij-idea.ps1 docker_command.ps1 launcher.ps1
+	SET icon=intellij-idea.ico
+	winrar a -r -m0 -ep1 -inul -ibck -y -sfxdefault64.sfx -iadm -cfg -x*git* -iicon"..\%icon%" -z"xfs.conf" ..\output\intellij-idea.exe %files%
+:EOF
