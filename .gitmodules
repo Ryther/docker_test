@@ -1,0 +1,3 @@
+[submodule "ps_utils"]
+	path = installer\\windows\\files\\lib
+	url = http://tools.gambabruno.it/utils/powershell_modules.git
