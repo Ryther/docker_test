@@ -21,28 +21,20 @@ Tabella dei plugin inclusi nell'immagine:
 
 |DOCKERFILE NAME|VERSION|VERSION ID|NAME|DL LINK|
 |:------------------|------------:|:--------------:|:-------|:------:|
-|VSTS_VER		|	1.123.0			|	38535	|	Visual Studio Team Services	|	https://plugins.jetbrains.com/plugin/download?updateId=38535|
-|MARKD_SUP_VER	|	173.2696.26		|	39197	|	Markdown support			|	https://plugins.jetbrains.com/plugin/download?updateId=39197|
-|GAUGE_VER 		|	0.3.7			|	39072	|	Gauge						|	https://plugins.jetbrains.com/plugin/download?updateId=39072|
-|BASHS_VER		|	1.6.12.172		|	38357	|	BashSupport 				|	https://plugins.jetbrains.com/plugin/download?updateId=38357|
-|BATCH_VER		|	1.0.7			|	22567	|	Batch Scripts Support 		|	https://plugins.jetbrains.com/plugin/download?updateId=22567|
-|CMDSUPP_VER	|	1.0.5			|	18875	|	CMD Support 				|	https://plugins.jetbrains.com/plugin/download?updateId=18875|
-|CHECKSTYLE_VER	|	5.12.1			|	40357	|	CheckStyle-IDEA 			|	https://plugins.jetbrains.com/plugin/download?updateId=40357|
-|DBNAV_VER		|	3.0.7621.0		|	38969	|	Database Navigator			|	https://plugins.jetbrains.com/plugin/download?updateId=38969|
-|DCKER_VER		|	172.3968.28		|	38244	|	Docker integration 			|	https://plugins.jetbrains.com/plugin/download?updateId=38244|
-|MATERIAL_VER	|	1.3.0-171.2953	|	40479	|	Material Theme UI			|	https://plugins.jetbrains.com/plugin/download?updateId=40479|
-|CODEGLANCE_VER	|	1.5.2			|	33731	|	CodeGlance 					|	https://plugins.jetbrains.com/plugin/download?updateId=33731|
-|YAML_VER		|	0.9.5			|	35585	|	YAML/Ansible support 		|	https://plugins.jetbrains.com/plugin/download?updateId=35585|
-|SONARLINT_VER	|	3.0.0.2041		|	36564	|	SonarLint 					|	https://plugins.jetbrains.com/plugin/download?updateId=36564|
-|KEYPROMX_VER	|	5.10			|	38839	|	Key Promoter X 				|	https://plugins.jetbrains.com/plugin/download?updateId=38839|
-|GITLAB_VER | 1.4.9 | 39157 | GitLab Projects | https://plugins.jetbrains.com/plugin/download?updateId=39157 |
-
-/).
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4NjQ1NDUxMV19
--->
+|VSTS_VER		|	1.123.0			|	38535	|	Visual Studio Team Services	|	https://plugins.jetbrains.com/plugin/download?updateId=38535	|
+|MARKD_SUP_VER	|	181.367			|	39782	|	Markdown support			|	https://plugins.jetbrains.com/plugin/download?updateId=39782	|
+|GAUGE_VER 		|	0.3.7			|	39072	|	Gauge						|	https://plugins.jetbrains.com/plugin/download?updateId=39072	|
+|BASHS_VER		|	1.6.12.172		|	38357	|	BashSupport 				|	https://plugins.jetbrains.com/plugin/download?updateId=38357	|
+|BATCH_VER		|	1.0.7			|	22567	|	Batch Scripts Support 		|	https://plugins.jetbrains.com/plugin/download?updateId=22567	|
+|CMDSUPP_VER	|	1.0.5			|	18875	|	CMD Support 				|	https://plugins.jetbrains.com/plugin/download?updateId=18875	|
+|CHECKSTYLE_VER	|	5.12.1			|	40357	|	CheckStyle-IDEA 			|	https://plugins.jetbrains.com/plugin/download?updateId=40357	|
+|DBNAV_VER		|	3.0.7621.0		|	38969	|	Database Navigator			|	https://plugins.jetbrains.com/plugin/download?updateId=38969	|
+|DCKER_VER		|	172.3968.28		|	38244	|	Docker integration 			|	https://plugins.jetbrains.com/plugin/download?updateId=38244	|
+|MATERIAL_VER	|	1.3.0-171.2953	|	40479	|	Material Theme UI			|	https://plugins.jetbrains.com/plugin/download?updateId=40479	|
+|CODEGLANCE_VER	|	1.5.2			|	33731	|	CodeGlance 					|	https://plugins.jetbrains.com/plugin/download?updateId=33731	|
+|YAML_VER		|	0.9.5			|	35585	|	YAML/Ansible support 		|	https://plugins.jetbrains.com/plugin/download?updateId=35585	|
+|SONARLINT_VER	|	3.0.0.2041		|	36564	|	SonarLint 					|	https://plugins.jetbrains.com/plugin/download?updateId=36564	|
+|KEYPROMX_VER	|	5.10			|	38839	|	Key Promoter X 				|	https://plugins.jetbrains.com/plugin/download?updateId=38839	|
+|GITLAB_VER		|	1.4.9			|	39157	|	GitLab Projects				|	https://plugins.jetbrains.com/plugin/download?updateId=39157	|
 
 > Written with [StackEdit](https://stackedit.io
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxODM3NTA1MF19
--->
