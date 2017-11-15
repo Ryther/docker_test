@@ -35,9 +35,14 @@ Tabella dei plugin inclusi nell'immagine:
 |YAML_VER		|	0.9.5			|	35585	|	YAML/Ansible support 		|	https://plugins.jetbrains.com/plugin/download?updateId=35585|
 |SONARLINT_VER	|	3.0.0.2041		|	36564	|	SonarLint 					|	https://plugins.jetbrains.com/plugin/download?updateId=36564|
 |KEYPROMX_VER	|	5.10			|	38839	|	Key Promoter X 				|	https://plugins.jetbrains.com/plugin/download?updateId=38839|
+|GITLAB_VER | 1.4.9 | 39157 | GitLab Projects | https://plugins.jetbrains.com/plugin/download?updateId=39157 |
 
-
-> Written with [StackEdit](https://stackedit.io/).
+/).
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTg4NjQ1NDUxMV19
+-->
+
+> Written with [StackEdit](https://stackedit.io
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTYxODM3NTA1MF19
 -->
