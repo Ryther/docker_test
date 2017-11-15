@@ -1,1 +1,0 @@
-powershell -noprofile -executionpolicy Bypass -command "&{ start-process powershell -ArgumentList '-noprofile -file %TEMP%\docker_%2\launcher.ps1 %1 %2 %3' -verb RunAs }"
